@@ -10,6 +10,7 @@ import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.BaseResponse;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,9 @@ public class Bot {
 
     @Value("${telegram.token}")
     private String TOKEN;
+
+    @Autowired
+    private Search search;
 
     //objeto responsável por receber as mensagens
     private GetUpdatesResponse updatesResponse;
@@ -52,15 +56,16 @@ public class Bot {
                 //atualização do off-set
                 m = update.updateId()+1;
 
-                System.out.println("Recebendo mensagem:"+ update.message().text());
 
                 //envio de "Escrevendo" antes de enviar a resposta
                 baseResponse = bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+
                 //verificação de ação de chat foi enviada com sucesso
                 System.out.println("Resposta de Chat Action Enviada?" + baseResponse.isOk());
 
                 //envio da mensagem de resposta
-                sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"Não entendi... Wagner"));
+                sendResponse = bot.execute(new SendMessage(update.message().chat().id(), search.checkMessage(update.message().text())));
+
                 //verificação de mensagem enviada com sucesso
                 System.out.println("Mensagem Enviada?" +sendResponse.isOk());
 
