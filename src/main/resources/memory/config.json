@@ -1,0 +1,13 @@
+{
+  "Olá, seja Bem Vindo! Você gostatia de participar?": [
+    {
+      "SIM": "Informe qual seu apelido ?",
+      "NÃO": "Em que posso te ajudar ?"
+    }
+  ],
+  "Informe qual seu apelido ?": [
+    {
+      "exec": "saveAsName"
+    }
+  ]
+}

@@ -1,20 +1,25 @@
 package com.fiap.friendsecret.service;
 
 import com.fiap.friendsecret.entities.Manager;
-import org.springframework.stereotype.Service;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.FileReader;
+import java.io.IOException;
 
-import java.util.HashMap;
-import java.util.Map;
-
-@Service
+@SpringBootApplication
 public class Memory {
 
     private Manager manager = new Manager();
 
     public void loadResponse() {
-        Map<String, String> response = new HashMap<>();
-        response.put("SIM", "Informe qual seu apelido ?");
-        response.put("NÃO", "Em que posso te ajudar ?");
-        manager.setResponse(response);
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject data = (JSONObject) parser.parse(new FileReader("/Users/wagnercarvalho/Desktop/projeto/fiap/secret-friend/src/main/resources/memory/config.json"));//path to the JSON file.
+            manager.setResponse(data);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -64,7 +64,7 @@ public class Bot {
                 System.out.println("Resposta de Chat Action Enviada?" + baseResponse.isOk());
 
                 //envio da mensagem de resposta
-                sendResponse = bot.execute(new SendMessage(update.message().chat().id(), search.checkMessage(update.message().text())));
+                sendResponse = bot.execute(new SendMessage(update.message().chat().id(), search.checkMessage(update.message())));
 
                 //verificação de mensagem enviada com sucesso
                 System.out.println("Mensagem Enviada?" +sendResponse.isOk());
