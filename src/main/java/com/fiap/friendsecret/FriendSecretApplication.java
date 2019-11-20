@@ -9,14 +9,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FriendSecretApplication {
 
 	private static Bot bot;
+	private static Memory memory;
 
-	public FriendSecretApplication(Bot bot) { this.bot = bot; }
+	public FriendSecretApplication(Bot bot, Memory memory) {
+		this.bot = bot;
+		this.memory = memory;
+	}
 
 	public static void main(String[] args) {
-		Memory memory = new Memory();
-		memory.loadResponse();
-
 		SpringApplication.run(FriendSecretApplication.class, args);
+		memory.loadResponse();
 		bot.startBot();
 	}
 
