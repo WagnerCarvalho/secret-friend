@@ -26,11 +26,8 @@ public class Manager {
     }
 
     public String checkMessage(String welcome) {
-        //simplificar IF
         String result;
-        if (questionBot.size() == 0) {
-            result = greeting(welcome);
-        } else if (questionBot.containsKey(owner.id())) {
+        if (questionBot.size() > 0 && questionBot.containsKey(owner.id())) {
             result = parseResult(response.get(questionBot.get(owner.id())), answerUser, welcome);
         } else {
             result = greeting(welcome);
