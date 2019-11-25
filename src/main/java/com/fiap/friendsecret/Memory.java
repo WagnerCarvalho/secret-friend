@@ -22,6 +22,9 @@ public class Memory {
     @Value("${telegram.file.config}")
     private String configFile;
 
+	@Value("${telegram.welcome}") 
+	private String WELCOME;
+	
     /**
      * Carrega o gerenciador de perguntas com dados pré-definidos
      */
@@ -31,6 +34,7 @@ public class Memory {
             JSONParser parser = new JSONParser();
             JSONObject data = (JSONObject) parser.parse(new FileReader(configFile));//path to the JSON file.
             Manager.setResponse(data);
+            Manager.setDefaultResponse(WELCOME);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

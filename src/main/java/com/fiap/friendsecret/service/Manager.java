@@ -21,17 +21,16 @@ public class Manager {
 	private static Map<String, Object> response = new HashMap<>();
 	private static HashMap<Integer, String> questionBot = new HashMap<>();
 	
+	private static String WELCOME;
+	
 	private Person user;
 	private String answerUser;
 	private User owner;
-	
-    private String WELCOME;
 
-    public Manager(String answer, User owner, String WELCOME) {
+    public Manager(String answer, User owner) {
 		this.user =  new Person();
 		this.answerUser = answer;
 		this.owner = owner;
-		this.WELCOME = WELCOME;
 	}
     
     /**
@@ -41,7 +40,11 @@ public class Manager {
 	public static void setResponse(Map<String, Object> response) {
 		Manager.response = response;
 	}
-
+	
+	public static void setDefaultResponse(String welcome) {
+		WELCOME = welcome;
+	}
+	
 	public String checkMessage() {
 		String userLatestStep = questionBot.get(owner.id());
 		Object options = response.get(userLatestStep);
@@ -91,5 +94,5 @@ public class Manager {
 		questionBot.put(user.getId(), "Desculpe, não entendi sua resposta");
 		return questionBot.get(owner.id());
 	}
-	
+
 }
