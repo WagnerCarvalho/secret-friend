@@ -16,7 +16,7 @@ public class Memory {
     public void loadResponse() {
         try {
             JSONParser parser = new JSONParser();
-            JSONObject data = (JSONObject) parser.parse(new FileReader("/Users/wagnercarvalho/Desktop/projeto/fiap/secret-friend/src/main/resources/memory/config.json"));//path to the JSON file.
+            JSONObject data = (JSONObject) parser.parse(new FileReader("C://Users//logonrmlocal//git//secret-friend-wagner//src//main//resources//memory//config.json"));//path to the JSON file.
             manager.setResponse(data);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
