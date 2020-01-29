@@ -2,6 +2,7 @@ package com.fiap.friendsecret;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,12 +20,15 @@ import com.fiap.friendsecret.service.Manager;
 @Component
 public class Memory {
 
-    @Value("${telegram.file.config}")
+    @Value("${memory.file}")
     private String configFile;
 
 	@Value("${telegram.welcome}") 
 	private String WELCOME;
-	
+
+    private static final Charset UTF_8 = Charset.forName("UTF-8");
+    private static final Charset ISO = Charset.forName("ISO-8859-1");
+
     /**
      * Carrega o gerenciador de perguntas com dados pré-definidos
      */
