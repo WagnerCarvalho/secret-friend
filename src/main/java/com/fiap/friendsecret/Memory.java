@@ -1,9 +1,12 @@
 package com.fiap.friendsecret;
 
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -23,11 +26,8 @@ public class Memory {
     @Value("${memory.file}")
     private String configFile;
 
-	@Value("${telegram.welcome}") 
+	@Value("${message.default}")
 	private String WELCOME;
-
-    private static final Charset UTF_8 = Charset.forName("UTF-8");
-    private static final Charset ISO = Charset.forName("ISO-8859-1");
 
     /**
      * Carrega o gerenciador de perguntas com dados pré-definidos
@@ -36,9 +36,9 @@ public class Memory {
 	public void loadResponse() {
         try {
             JSONParser parser = new JSONParser();
-            JSONObject data = (JSONObject) parser.parse(new FileReader(configFile));//path to the JSON file.
+            JSONObject data = (JSONObject) parser.parse(new InputStreamReader(new FileInputStream(configFile), Charset.forName("UTF-8")));//path to the JSON file.
             Manager.setResponse(data);
-            Manager.setDefaultResponse(WELCOME);
+            Manager.setDefaultResponse( ((JSONArray) data.get(WELCOME)).get(0).toString());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

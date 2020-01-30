@@ -1,62 +1,62 @@
 {
   "Ajuda": [
-    "Você gostatia de participar do grupo de amigo secreto? \n \n Informe SIM ou NÃO... \n \n Caso tenha algum problema digite ajuda..."
+    "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda."
   ],
   "Desculpe, não entendi sua resposta.": [
-    "Você gostatia de participar do grupo de amigo secreto? \n \n Informe SIM ou NÃO... \n \n Caso tenha algum problema digite ajuda..."
+    "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda."
   ],
-  "Você gostatia de participar do grupo de amigo secreto?": [
+  "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda.": [
     {
       "SIM": "o que você gostaria de ganhar?"
     },
     {
-      "NÃO": "caso futuramente queira participar entre em contato!!! \n \n Obrigado pela Atenção"
+      "NÃO": "caso futuramente queira participar entre em contato!!! Obrigado pela Atenção"
     },
     {
       "CLARO": "o que você gostaria de ganhar?"
     }
   ],
   "o que você gostaria de ganhar?": [
-    "Essa foi sua escolha!!! \n \n Sim ou Não?"
+    "Essa foi sua escolha!!! Sim ou Não?"
   ],
   "Essa foi sua escolha!!! \n \n Sim ou Não?": [
     {
-      "SIM": "Qual seria o tamanho? \n \n Pequeno, Médio ou Grande..."
+      "SIM": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
     },
     {
       "NÃO": "o que você gostaria de ganhar?"
     },
     {
-      "CLARO": "Qual seria o tamanho? \n \n Pequeno, Médio ou Grande..."
+      "CLARO": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
     }
   ],
 
   "Qual seria o tamanho?": [
-    "Esse é o tamanho!!! \n \n Sim ou Não?"
+    "Esse é o tamanho!!! Sim ou Não?"
   ],
   "Esse é o tamanho!!!": [
     {
       "SIM": "Qual color de sua preferência?"
     },
     {
-      "NÃO": "Qual seria o tamanho? \n \n Pequeno, Médio ou Grande..."
+      "NÃO": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
     },
     {
       "CLARO": "Qual color de sua preferência?"
     }
   ],
   "Qual color de sua preferência?": [
-    "Essa color está correta!!! \n \n Sim ou Não?"
+    "Essa color está correta!!! Sim ou Não?"
   ],
   "Essa color está correta!!!": [
     {
-      "SIM": "No dia xx/xx/xxxx vamos fazer o sorteio. \n \n Muito obrigado pela sua participação"
+      "SIM": "No dia xx/xx/xxxx vamos fazer o sorteio. Muito obrigado pela sua participação"
     },
     {
       "NÃO": "Qual color de sua preferência?"
     },
     {
-      "CLARO": "No dia xx/xx/xxxx vamos fazer o sorteio. \n \n Muito obrigado pela sua participação"
+      "CLARO": "No dia xx/xx/xxxx vamos fazer o sorteio. Muito obrigado pela sua participação"
     }
   ]
 }

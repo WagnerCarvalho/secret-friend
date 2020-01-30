@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 import com.pengrad.telegrambot.model.Message;
 
+import java.nio.charset.Charset;
+
 @Service
 public class Search {
 
