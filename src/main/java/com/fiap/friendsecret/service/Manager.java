@@ -6,7 +6,6 @@ import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.fiap.friendsecret.entities.Person;
 import com.pengrad.telegrambot.model.User;
 
 /**
@@ -27,12 +26,10 @@ public class Manager {
 	
 	private static String WELCOME;
 	
-	private Person user;
 	private String answerUser;
 	private User owner;
 
     public Manager(String answer, User owner) {
-		this.user =  new Person();
 		this.answerUser = answer;
 		this.owner = owner;
 	}
@@ -79,7 +76,6 @@ public class Manager {
 
 	@SuppressWarnings("unchecked")
 	private String flowMultiple(Object options) {
-		user.setUser(owner);
 		((JSONArray) options).forEach(item -> {
 			if (((JSONObject) item).containsKey(answerUser.toUpperCase())) {
 				questionBot.put(owner.id(), ((JSONObject) item).get(answerUser.toUpperCase()).toString());
@@ -89,35 +85,32 @@ public class Manager {
 	}
 
 	private String greeting() {
-		user.setUser(owner);
 		answerUser = null;
-		questionBot.put(user.getId(), WELCOME);
+		questionBot.put(owner.id(), WELCOME);
 
 		return buildMessage("Olá, " + owner.firstName() + "! " + WELCOME);
 	}
 
 	private String flowSimple(Object options) {
-		user.setUser(owner);
-		questionBot.put(user.getId(), ((JSONArray) options).get(0).toString());
+		questionBot.put(owner.id(), ((JSONArray) options).get(0).toString());
 		return buildMessage(owner.firstName() + ", " + questionBot.get(owner.id()));
 	}
 
 	private String notFound() {
-		user.setUser(owner);
-		questionBot.put(user.getId(), "Desculpe, não entendi sua resposta");
+		questionBot.put(owner.id(), "Desculpe, não entendi sua resposta");
 		return buildMessage(questionBot.get(owner.id()));
 	}
 
 	private String buildMessage(String message) {
 		if(message != null && message.contains("@record")) {
 			message = message.replaceAll("@record", answerUser);
-			recorded.put(user.getId(), answerUser);
+			recorded.put(owner.id(), answerUser);
 		}
 		if(message != null && message.contains("!id")) {
-			message = message.replaceAll("!id", user.getId() + "");
+			message = message.replaceAll("!id", owner.id() + "");
 		}
 		if(message != null && message.contains("#find")) {
-			message = message.replaceAll("#find", recorded.get(Integer.parseInt(userLatestAnswer.get(user.getId()))));
+			message = message.replaceAll("#find", recorded.get(Integer.parseInt(userLatestAnswer.get(owner.id()))));
 		}
 
 		return message;
