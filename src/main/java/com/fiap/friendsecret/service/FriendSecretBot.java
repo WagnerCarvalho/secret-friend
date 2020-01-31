@@ -59,6 +59,7 @@ public class FriendSecretBot {
 
         List<Update> updates = updatesResponse.updates();
 
+        //verifica todas as interações pendentes
         for (Update update : updates) {
             m = update.updateId()+1;
             baseResponse = bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));

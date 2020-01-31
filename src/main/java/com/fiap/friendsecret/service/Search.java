@@ -18,6 +18,7 @@ public class Search {
      * @return
      */
     public String checkMessage(Message message) {
+        //instancia objeto para a busca de opcoes
         Manager manager = new Manager(message.text(), message.from());
         return manager.checkMessage();
     }
