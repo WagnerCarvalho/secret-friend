@@ -2,6 +2,9 @@ package com.fiap.friendsecret.entities;
 
 import com.pengrad.telegrambot.model.User;
 
+/**
+ * Classe que representa a pessoa utilizando o serviço do bot
+ */
 public class Person {
     private Integer id;
     private String firstName;

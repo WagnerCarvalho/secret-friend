@@ -1,62 +1,45 @@
 {
-  "Ajuda": [
-    "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda."
+  "/start": [
+    "\n \n Eu sou o bot do amigo secreto! \n \n Aqui você pode cadastrar o que deseja ganhar no amigo secreto ou procurar o que o seu amigo secreto quer ganhar!! \n \n  Para buscar digite /buscar e para cadastrar seu desejo, digite /cadastrar \n \n  Em qualquer momento digite /ajuda para ver essa mensagem novamente!"
+  ],
+  "/ajuda": [
+    "\n \n Eu sou o bot do amigo secreto! \n \n Aqui você pode cadastrar o que deseja ganhar no amigo secreto ou procurar o que o seu amigo secreto quer ganhar!! \n \n  Para buscar digite /buscar e para cadastrar seu desejo, digite /cadastrar \n \n  Em qualquer momento digite /ajuda para ver essa mensagem novamente!"
+  ],
+  "/cadastrar": [
+    "o que você gostaria de ganhar? Lembre-se de dar o máximo de detalhes possível!"
+  ],
+  "/buscar": [
+    "\n \n Por favor, informe o código do seu amigo secreto. \n \n O código deve ser o mesmo informado pelo amigo secreto."
   ],
   "Desculpe, não entendi sua resposta.": [
-    "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda."
+    "o que você gostaria de ganhar? Lembre-se de dar o máximo de detalhes possível!"
   ],
-  "Você gostaria de participar do grupo de amigo secreto? Informe SIM ou NÃO. Caso tenha algum problema digite ajuda.": [
+  "o que você gostaria de ganhar? Lembre-se de dar o máximo de detalhes possível!": [
+    "@record!! Essa foi sua escolha!!! \n \n Sim ou Não? "
+  ],
+  "@record!! Essa foi sua escolha!!! \n \n Sim ou Não? ": [
     {
-      "SIM": "o que você gostaria de ganhar?"
+      "SIM": "Excelente! Agora pode divulgar o bot do amigo secreto! \n \n Informe o código !id para que seu amigo possa te encontrar!"
     },
     {
-      "NÃO": "caso futuramente queira participar entre em contato!!! Obrigado pela Atenção"
+      "NÃO": "o que você gostaria de ganhar? Lembre-se de dar o máximo de detalhes possível!"
     },
     {
-      "CLARO": "o que você gostaria de ganhar?"
+      "CLARO": "Excelente! Agora pode divulgar o bot do amigo secreto! \n \n Informe o código !id para que seu amigo possa te encontrar!"
     }
   ],
-  "o que você gostaria de ganhar?": [
-    "Essa foi sua escolha!!! Sim ou Não?"
+  "\n \n Por favor, informe o código do seu amigo secreto. \n \n O código deve ser o mesmo informado pelo amigo secreto.": [
+    "Esse é o código que deseja buscar? \n \n Sim ou Não?"
   ],
-  "Essa foi sua escolha!!! \n \n Sim ou Não?": [
+  "Esse é o código que deseja buscar? \n \n Sim ou Não?": [
     {
-      "SIM": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
+      "SIM": "O seu amigo oculto gostaria de ganhar #find como presente!"
     },
     {
-      "NÃO": "o que você gostaria de ganhar?"
+      "NÃO": "\n \n Por favor, informe o código do seu amigo secreto. \n \n O código deve ser o mesmo informado pelo amigo secreto."
     },
     {
-      "CLARO": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
-    }
-  ],
-
-  "Qual seria o tamanho?": [
-    "Esse é o tamanho!!! Sim ou Não?"
-  ],
-  "Esse é o tamanho!!!": [
-    {
-      "SIM": "Qual color de sua preferência?"
-    },
-    {
-      "NÃO": "Qual seria o tamanho? Pequeno, Médio ou Grande..."
-    },
-    {
-      "CLARO": "Qual color de sua preferência?"
-    }
-  ],
-  "Qual color de sua preferência?": [
-    "Essa color está correta!!! Sim ou Não?"
-  ],
-  "Essa color está correta!!!": [
-    {
-      "SIM": "No dia xx/xx/xxxx vamos fazer o sorteio. Muito obrigado pela sua participação"
-    },
-    {
-      "NÃO": "Qual color de sua preferência?"
-    },
-    {
-      "CLARO": "No dia xx/xx/xxxx vamos fazer o sorteio. Muito obrigado pela sua participação"
+      "CLARO": "O seu amigo oculto gostaria de ganhar #find como presente!"
     }
   ]
 }

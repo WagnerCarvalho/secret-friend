@@ -30,7 +30,7 @@ public class Memory {
 	private String WELCOME;
 
     /**
-     * Carrega o gerenciador de perguntas com dados pré-definidos
+     * Carrega o gerenciador de perguntas com dados pré-definidos em um arquivo json
      */
     @SuppressWarnings("unchecked")
 	public void loadResponse() {
